@@ -1,0 +1,54 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[final]{beamer}
+\usepackage[scale=1]{beamerposter}
+\input{tk_poster.tex}
+\input{tk_packages.tex}
+\input{tk_macros.tex}
+\input{tk_environ.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TITLE SECTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Quasi-Solution Approach to a 2-D Vortex Patch Problem}
+\author{Tae Eun Kim and Saleh Tanveer}
+\institute{Department of Mathematics, The Ohio State University}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{frame}[t]
+  % Main frame: The whole poster is enclosed in one beamer frame
+  \begin{columns}[t]
+    % The whole poster consists of three major columns, the second of
+    % which is split into two columns twice - the [t] option aligns each
+    % column's content to the top
+    \begin{column}{\sepwid}\end{column}
+
+    \begin{column}{3\tithewid}
+      \input{col1.tex}
+    \end{column}
+
+    \begin{column}{\sepwid}\end{column}
+
+    \begin{column}{4\tithewid}
+      \input{col2.tex}
+    \end{column}
+
+    \begin{column}{\sepwid}\end{column}
+
+    \begin{column}{3\tithewid}
+      \input{col3.tex}
+    \end{column}
+
+    \begin{column}{\sepwid}\end{column}
+  \end{columns}
+
+\end{frame}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

@@ -1,0 +1,117 @@
+\begin{block}{Main Result}
+  \begin{alertblock}{Theorem}
+    \label{thm:main}
+    For $\rho = \rho_0 \in (0,1)$, there exists a unique solution
+    $(U, Z) $ to the vortex patch problem in a small neighborhood of
+    $(U_{0}, F_{0})$ where
+    \begin{equation}
+      \label{eq:41}
+      U_{0} = U_0 (\rho)\,, \quad
+      F_{0}(\zeta) = i \left[
+        \frac{\zeta - \rho}{\zeta + \rho}
+        + \alpha(\zeta) - \alpha(\rho^{2}/\zeta) \right] \,.
+    \end{equation}
+    More precisely,
+    \begin{equation}
+      \label{eq:thm-error}
+      \| Z - F_{0} \| \le 10^{-5} \quad \mbox{and} \quad
+      \left| U - U_{0} \right| \le 10^{-5} \,.
+    \end{equation}
+    Furthermore, this solution $F$ is univalent in the annular domain
+    $\Omega$.
+  \end{alertblock}
+
+  \begin{itemize}
+  \item The expressions for $U_0 $, and analytic function $\alpha$ in the
+    unit disk are reported elsewhere~\cite{tk-thesis}.
+  \item In principle, a uniform representation of solution for $\rho$ in
+    an interval contained in $(0,1)$ can be obtained when the $\rho$
+    values contained are modest. When $\rho$ is close to 1, expression
+    for accurate quasi-solution is long and hence we refrain from
+    presenting uniform formula here.
+  \end{itemize}
+\end{block}
+
+\begin{block}{Implementation of QS Strategy}
+  % We now seek yet another reformulation of the vortex patch problem
+  % that is suitable for quasi-solution approach and requires only
+  % boundary values on $\abs{\zeta} = 1$.
+
+  \begin{itemize}
+  \item Define $(u, G) = (U, Z) - (U_0, F_0)$
+    % \begin{equation}
+    %   \label{eq:soln-decomp}
+    %   (u, G) = (U, Z) - (U_0, F_0) \,.
+    % \end{equation}
+    where $(U_0, F_0)$ are chosen to make the residual $R_0$ small:
+    \begin{equation}
+      \label{eq:eqR0}
+      R_0 =
+      \ii \zeta F_0^\prime (\zeta) - \frac{\cC[F_0] - U_0 \cJ (\zeta) }{ U_0+\cA[F_0] (\zeta) }
+      \ .
+    \end{equation}
+  \item Using the definition of $(u, G)$,~\eqref{eq:complex} may be
+    re-written as
+    \begin{equation}
+      \label{eq:eqG}
+      \ii \zeta G_\zeta = -R_0 +
+      \frac{\cC[F_0+G] - (U_0 +u) \cJ (\zeta) }{ U_0+u+\cA[F_0 +G] (\zeta) }
+      - \frac{\cC[F_0] - U_0 \cJ (\zeta) }{ U_0+\cA[F_0] (\zeta) }
+      \ .
+    \end{equation}
+  \item Since $G$ is completely characterized by its series
+    coefficients, it is sufficient to consider the boundary values on
+    $\zeta = e^{i\theta}$. Moreover, by the M\"{o}bius map~\eqref{eqmobius},
+    the boundary values of~\eqref{eq:eqG} on $\zeta = e^{i\theta}$ can be
+    written in terms of the angular variable $\nu$ of $\eta = e^{i\nu}$:
+    \begin{equation}
+      \label{eq:geq}
+      \mathcal{P}_\ge \Bigl (
+      g_\nu + \theta_\nu \left [ r_0 - \frac{\cC[f_0+g] - (U_0+u) j)}{U_0+u+ {A}
+          [f_0+g]} + \frac{\cC[f_0] - U_0 j }{U_0+ A_0} \right ]
+      \Bigr ) = 0 \ ,
+    \end{equation}
+    where $g (\nu) = G \left ( \zeta (e^{i\nu}) \right )$ and $j(\nu) = \cJ
+    \left(  \zeta(e^{i\nu}) \right)$.
+  \item The above formulation of the vortex patch problem
+    is suitable for quasi-solution approach and requires only
+    boundary values on $\abs{\zeta} = 1$.
+  \end{itemize}
+
+  % \begin{alertblock}{Alternate Formulation: QS-Method}
+  %   Determine $(u, g) \in \RR \times s^2$ such that
+  %   \begin{equation}
+  %     \label{eq:geq}
+  %     \mathcal{P}_\ge \Bigl (
+  %     g_\nu + \theta_\nu \left [ r_0 - \frac{\cC[f_0+g] - (U_0+u) j)}{U_0+u+ {A}
+  %       [f_0+g]} + \frac{\cC[f_0] - U_0 j }{U_0+ A_0} \right ]
+  %     \Bigr ) = 0 \ ,
+  %   \end{equation}
+  %   and $Z=F_0+G \in \mathcal{F}$, where $g (\nu) = G \left ( \zeta (e^{i\nu}) \right ) $.
+  % \end{alertblock}
+\end{block}
+
+\begin{block}{References}
+  % \nocite{*} % Insert publications even if they are not cited in
+  % % the poster
+  \small{
+    \bibliographystyle{unsrt}   %abbrv, alpha, apalike, plain, siam, unsrt
+    \bibliography{tk_ref}
+    \vspace{0.75in}
+  }
+\end{block}
+
+
+% \setbeamercolor{block title}{fg=red,bg=white} % Change the block title color
+% \begin{block}{Acknowledgements}
+%   \small{\rmfamily{Nam mollis tristique neque eu
+%   luctus. Suspendisse rutrum congue nisi sed
+%   convallis. Aenean id neque dolor. Pellentesque habitant
+%   morbi tristique senectus et netus et malesuada fames ac
+%   turpis egestas.}} \\
+% \end{block}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End:

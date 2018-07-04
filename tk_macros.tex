@@ -1,0 +1,224 @@
+%%%% Custom macros
+
+%% Greek letters
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\de}{\delta}
+\newcommand{\e}{\epsilon}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\g}{\gamma}
+\newcommand{\ka}{\kappa}
+\newcommand{\la}{\lambda}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+\newcommand{\sig}{\sigma}
+\let\oldth\th %% \th is used for "thorn"
+\renewcommand{\th}{\theta}
+
+
+%% Blackboard
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\DD}{\mathbb{D}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\UU}{\mathbb{U}}
+\newcommand{\1}{\mathbbm{1}}
+
+%% Caligraphic
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+
+
+%% Roman, italic, boldface
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bD}{\mathbf{D}}
+\newcommand{\bE}{\mathbf{E}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bL}{\mathbf{L}}
+\newcommand{\bM}{\mathbf{M}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bP}{\mathbf{P}}
+\newcommand{\bS}{\mathbf{S}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\bd}{\mathbf{d}}
+\newcommand{\bh}{\mathbf{h}}
+\newcommand{\br}{\mathbf{r}}
+
+
+%% Editorial
+\renewcommand{\thefootnote}{(\arabic{footnote})}
+% \setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+
+%% Delimiters, accents, bars, etc
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\Norm}[2]{\left\|#1\right\|_{#2}}
+\newcommand{\avg}[1]{\langle#1\rangle}
+
+
+%% Mathematical functions and operators
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\erfc}{erfc}
+\DeclareMathOperator{\ii}{i}
+\DeclareMathOperator{\dd}{\,d}
+\DeclareMathOperator{\eu}{e}
+\newcommand{\del}{\partial}
+\newcommand{\tri}{\triangle}
+\newcommand{\grad}{\nabla}
+\newcommand{\dvg}{\nabla\cdot}
+\newcommand{\curl}{\nabla\times}
+% \newcommand{\p}{'}
+% \newcommand{\pp}{''}
+% \newcommand{\ppp}{'''}
+
+
+%% Principal value integral
+\def\Xint#1{\mathchoice
+   {\XXint\displaystyle\textstyle{#1}}%
+   {\XXint\textstyle\scriptstyle{#1}}%
+   {\XXint\scriptstyle\scriptscriptstyle{#1}}%
+   {\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+   \!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+     \vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\pvint{\Xint-}
+
+
+%% Frequently used, projected spaces
+\newcommand{\pl}[1]{#1_{\mathsmaller{\mathsmaller{<}}}} % proj. less than
+\newcommand{\pg}[1]{#1_{\mathsmaller{\mathsmaller{>}}}} % proj. greater than
+\newcommand{\hl}{\pl{\bh}} % h_<
+\newcommand{\hg}{\pg{\bh}} % h_>
+\newcommand{\gl}{\pl{g}} % g_<
+\newcommand{\gG}{\pg{g}} % g_>, \gg is already taken
+\newcommand{\El}{\pl{\bE}} % E_< (sequence)
+\newcommand{\Eg}{\pg{\bE}} % E_> (sequence)
+\newcommand{\eg}{\pg{E}} % E_> (function)
+\newcommand{\rl}{\pl{\br}} % r_<
+\newcommand{\rg}{\pg{\br}} % r_>
+\newcommand{\Linf}{\mathrm{L}^{\infty}} % L^{\infty}
+\newcommand{\Ltwo}{\mathrm{L}^2} % L^2
+
+
+%% Frequently used, subscripted functions
+\newcommand{\gone}{g_{1}}
+\newcommand{\gtwo}{g_{2}}
+\newcommand{\Eone}{E_{1}}
+\newcommand{\Etwo}{E_{2}}
+\newcommand{\eone}{E^{(1)}}
+\newcommand{\etwo}{E^{(2)}}
+\newcommand{\euone}{E_{u}^{(1)}}
+\newcommand{\eutwo}{E_{u}^{(2)}}
+\newcommand{\uone}{u^{(1)}}
+\newcommand{\utwo}{u^{(2)}}
+\newcommand{\Ez}{E^{(0)}}
+\newcommand{\uz}{u^{(0)}}
+
+
+%% Tilde-ed operators
+\newcommand{\tcA}{\widetilde{\cA}}
+\newcommand{\tF}{\widetilde{F}}
+\newcommand{\tcK}{\widetilde{\cK}}
+\newcommand{\tL}{\widetilde{L}}
+\newcommand{\tcL}{\widetilde{\cL}}
+\newcommand{\tM}{\widetilde{M}}
+\newcommand{\tcM}{\widetilde{\cM}}
+\newcommand{\tR}{\widetilde{R}}
+\newcommand{\tcR}{\widetilde{\cR}}
+
+
+%% Some shortcuts
+\newcommand{\vu}{\vec{u}}
+\newcommand{\vom}{\vec{\om}}
+\newcommand{\dn}{\del_{\nu}}
+\newcommand{\du}{\del_{u}}
+
+
+%% Tweak some Greek letters
+\newcommand{\bchi}{\mbox{\raisebox{.4ex}{\begin{large}$\chi$\end{large}}}}
+\newcommand{\Chi}{\mbox{\Large$\chi$}} % nicer looking Chi
+\newcommand{\bzeta}{\boldsymbol{\zeta}} % Riemann zeta function
+
+
+%% Principal value integral
+\def\Xint#1{\mathchoice
+   {\XXint\displaystyle\textstyle{#1}}%
+   {\XXint\textstyle\scriptstyle{#1}}%
+   {\XXint\scriptstyle\scriptscriptstyle{#1}}%
+   {\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+   \!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+     \vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\pvint{\Xint-}
+
+
+%% Arc over symbols
+% reference: https://tex.stackexchange.com/questions/96680/a-better-notation-to-denote-arcs-for-an-american-high-school-textbook
+\makeatletter
+\DeclareFontFamily{U}{tipa}{}
+\DeclareFontShape{U}{tipa}{m}{n}{<->tipa10}{}
+\newcommand{\arc@char}{{\usefont{U}{tipa}{m}{n}\symbol{62}}}%
+\newcommand{\arc}[1]{\mathpalette\arc@arc{#1}}
+\newcommand{\arc@arc}[2]{%
+  \sbox0{$\m@th#1#2$}%
+  \vbox{
+    \hbox{\resizebox{\wd0}{\height}{\arc@char}}
+    \nointerlineskip
+    \box0
+  }%
+}
+
+\newsavebox{\astrutbox}
+\sbox{\astrutbox}{\rule[-5pt]{0pt}{20pt}}
+\newcommand{\astrut}{\usebox{\astrutbox}}
+\newcommand{\rls}{\raisebox{2pt}{\tikz{\draw[red,solid,line width=0.9pt](0,0) -- (5mm,0);}}}
+\newcommand{\rld}{\raisebox{2pt}{\tikz{\draw[red,dashed,line width=1.0pt](0,0) -- (5mm,0);}}}
+\newcommand{\bls}{\raisebox{2pt}{\tikz{\draw[blue,solid,line width=0.9pt](0,0) -- (5mm,0);}}}
+\newcommand{\bld}{\raisebox{2pt}{\tikz{\draw[blue,dashed,line width=1.0pt](0,0) -- (5mm,0);}}}
+\newcommand{\gls}{\raisebox{2pt}{\tikz{\draw[green,solid,line width=0.9pt](0,0) -- (5mm,0);}}}
+\newcommand{\gld}{\raisebox{2pt}{\tikz{\draw[green,dashed,line width=1.0pt](0,0) -- (5mm,0);}}}
+\newcommand{\mls}{\raisebox{2pt}{\tikz{\draw[magenta,solid,line width=0.9pt](0,0) -- (5mm,0);}}}
+\newcommand{\mld}{\raisebox{2pt}{\tikz{\draw[magenta,dashed,line width=1.0pt](0,0) -- (5mm,0);}}}
+\newcommand{\cls}{\raisebox{2pt}{\tikz{\draw[cyan,solid,line width=0.9pt](0,0) -- (5mm,0);}}}
+\newcommand{\cld}{\raisebox{2pt}{\tikz{\draw[cyan,dashed,line width=1.0pt](0,0) -- (5mm,0);}}}
+
+\newcommand{\ds}{\displaystyle}
